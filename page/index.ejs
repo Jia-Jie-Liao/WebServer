@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=courseName%></title>
-</head>
-<body>
+<%- include('header.ejs') %>
     <h1>首頁</h1>
     <h2><%=time%></h2>
+    <% if(blogs.length) { %>
+        <% blogs.forEach(articles => { %>
+            <h3>標題 : <%=articles.title%></h3>
+            <p>作者 : <%=articles.author%></p>
+        <% }) %>
+    <% } %>
     <script src=""></script>
-</body>
-</html>
+<%- include('footer.ejs') %>
